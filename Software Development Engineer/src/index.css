@@ -1,0 +1,26 @@
+html,
+body,
+#root {
+  background-color: #0f172a;
+}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@keyframes glow {
+  0%, 100% {
+    opacity: 0.4;
+  }
+  50% {
+    opacity: 0.8;
+  }
+}
+
+.animate-glow {
+  animation: glow 4s ease-in-out infinite;
+}
+
+.parallax-card {
+  transform-style: preserve-3d;
+}
