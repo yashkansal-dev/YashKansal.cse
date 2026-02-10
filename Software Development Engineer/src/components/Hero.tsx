@@ -1,4 +1,6 @@
 import { ArrowDown, Mail } from 'lucide-react';
+import Image from 'next/image';
+import { motion } from 'framer-motion';
 
 const Hero = () => {
   return (
@@ -23,45 +25,69 @@ const Hero = () => {
         <div className="grid lg:grid-cols-2 gap-16 items-center">
           {/* LEFT — TEXT */}
           <div className="text-center lg:text-left">
-            <span className="
-              inline-block
-              px-4 py-2
-              mb-6
-              rounded-full
-              bg-blue-500/10
-              border border-blue-500/20
-              text-blue-400
-              text-sm
-              font-medium
-            ">
-              Software Engineer
-            </span>
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5 }}
+            >
+              <span className="
+                inline-block
+                px-4 py-2
+                mb-6
+                rounded-full
+                bg-blue-500/10
+                border border-blue-500/20
+                text-blue-400
+                text-sm
+                font-medium
+              ">
+                Software Engineer
+              </span>
+            </motion.div>
 
-            <h1 className="
-              text-5xl
-              sm:text-6xl
-              md:text-7xl
-              lg:text-8xl
-              font-bold
-              text-white
-              leading-tight
-              mb-6
-            ">
-              YASH
-              <br />
-              KANSAL
-            </h1>
+            <motion.h1
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.1 }}
+              className="
+                text-5xl
+                sm:text-6xl
+                md:text-7xl
+                lg:text-8xl
+                font-bold
+                text-white
+                leading-tight
+                mb-6
+              "
+            >
+              Yash Kansal – Software Engineer
+            </motion.h1>
 
-            <p className="text-lg md:text-xl text-gray-300 max-w-xl mb-4">
+            <motion.p
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.2 }}
+              className="text-lg md:text-xl text-gray-300 max-w-xl mb-4"
+            >
               Building real-world software that scales, performs, <br></br>and creates impact
-            </p>
+            </motion.p>
 
-            <p className="text-gray-400 max-w-xl mb-10">
+            <motion.p
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.3 }}
+              className="text-gray-400 max-w-xl mb-10"
+            >
               Computer Science undergraduate specializing in production-ready web applications,
               real-time systems, and AI-driven solutions
-            </p>
+            </motion.p>
 
-            <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.4 }}
+              className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start"
+            >
               <a
                 href="#projects"
                 className="
@@ -95,11 +121,16 @@ const Hero = () => {
                 <Mail size={18} />
                 Get In Touch
               </a>
-            </div>
+            </motion.div>
           </div>
 
           {/* RIGHT — IMAGE */}
-          <div className="relative flex justify-center lg:justify-end">
+          <motion.div
+            initial={{ opacity: 0, x: 20 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.5, delay: 0.5 }}
+            className="relative flex justify-center lg:justify-end"
+          >
             {/* Glow */}
             <div
               className="
@@ -130,24 +161,32 @@ const Hero = () => {
                 hover:scale-105
               "
             >
-              <img
+              <Image
                 src="/images/ykansal.png"
                 alt="Yash Kansal"
-                className="w-full h-full object-cover"
+                fill
+                sizes="(max-width: 768px) 256px, 320px"
+                className="object-cover"
+                priority
               />
             </div>
-          </div>
+          </motion.div>
         </div>
 
         {/* Scroll indicator */}
-        <div className="mt-20 flex justify-center">
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.5, delay: 0.8 }}
+          className="mt-20 flex justify-center"
+        >
           <a
             href="#about"
             className="text-gray-400 hover:text-white transition-colors animate-bounce"
           >
             <ArrowDown size={32} />
           </a>
-        </div>
+        </motion.div>
       </div>
     </section>
   );

@@ -57,18 +57,17 @@ const Navbar = () => {
   ];
 
   const resumeLink =
-    'https://drive.google.com/file/d/1WpQBvAdY22o9gAy7XPeNFknq8kzvm0dR/view?usp=sharing';
+    'https://drive.google.com/file/d/1pBkZstZ-biEEUcMxF5JgUv9e2fRKADYw/view?usp=drive_link';
 
   const linkBase =
     'px-4 py-2 rounded-lg text-sm font-medium transition-all duration-200';
 
   return (
     <nav
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        scrolled
-          ? 'bg-gray-900/95 backdrop-blur-sm shadow-lg'
-          : 'bg-transparent'
-      }`}
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled
+        ? 'bg-gray-900/95 backdrop-blur-sm shadow-lg'
+        : 'bg-transparent'
+        }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
@@ -87,11 +86,10 @@ const Navbar = () => {
                   href={link.href}
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.96 }}
-                  className={`${linkBase} ${
-                    isActive
-                      ? 'bg-blue-600/20 text-blue-400'
-                      : 'text-gray-300 hover:bg-blue-600/15 hover:text-blue-400'
-                  }`}
+                  className={`${linkBase} ${isActive
+                    ? 'bg-blue-600/20 text-blue-400'
+                    : 'text-gray-300 hover:bg-blue-600/15 hover:text-blue-400'
+                    }`}
                 >
                   {link.label}
                 </motion.a>
@@ -103,19 +101,19 @@ const Navbar = () => {
           <div className="hidden md:flex items-center space-x-2">
             {[
               { href: resumeLink, icon: <FileType size={20} />, label: 'Resume' },
-              { href: 'https://github.com/Kansal-ji', icon: <Github size={20} />, label: 'GitHub' },
+              { href: 'https://github.com/yashkansal-dev', icon: <Github size={20} />, label: 'GitHub' },
               {
-                href: 'https://www.linkedin.com/in/yash-kansal-829343297/',
+                href: 'https://www.linkedin.com/in/yashkansal-dev/',
                 icon: <Linkedin size={20} />,
                 label: 'LinkedIn',
               },
               {
-                href: 'https://x.com/kansal_cse',
+                href: 'https://x.com/yashkansal_dev',
                 icon: <X size={20} />,
                 label: 'X',
               },
               {
-                href: 'https://leetcode.com/u/KANSALJI_KJ/',
+                href: 'https://leetcode.com/u/YashKansal-dev/',
                 icon: <Code2 size={20} />,
                 label: 'LeetCode',
               },
@@ -187,19 +185,19 @@ const Navbar = () => {
                 <div className="flex items-center gap-3 px-4 pt-3">
                   {[
                     { href: resumeLink, Icon: FileType, label: 'Resume' },
-                    { href: 'https://github.com/Kansal-ji', Icon: Github, label: 'GitHub' },
+                    { href: 'https://github.com/yashkansal-dev', Icon: Github, label: 'GitHub' },
                     {
-                      href: 'https://www.linkedin.com/in/yash-kansal-829343297/',
+                      href: 'https://www.linkedin.com/in/yashkansal-dev/',
                       Icon: Linkedin,
                       label: 'LinkedIn',
                     },
                     {
-                      href: 'https://x.com/kansal_cse',
+                      href: 'https://x.com/yashkansal_dev',
                       Icon: X,
                       label: 'X',
                     },
                     {
-                      href: 'https://leetcode.com/u/KANSALJI_KJ/',
+                      href: 'https://leetcode.com/u/YashKansal-dev/',
                       Icon: Code2,
                       label: 'LeetCode',
                     },

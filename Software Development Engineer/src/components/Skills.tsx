@@ -6,6 +6,7 @@ import {
   Wrench,
   Cloud,
 } from 'lucide-react';
+import { RevealOnScroll } from './RevealOnScroll';
 
 /* ---------- TYPES ---------- */
 type SkillColor = 'blue' | 'green' | 'purple' | 'orange' | 'red' | 'teal';
@@ -103,71 +104,77 @@ const Skills = () => {
     <section id="skills" className="py-20 bg-gray-800">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
-        <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
-            Technical Stack
-          </h2>
-          <div className="w-20 h-1 bg-blue-600 mx-auto mb-6"></div>
-          <p className="text-gray-400 text-lg max-w-2xl mx-auto">
-            Technologies and tools I use to build scalable, production-ready applications
-          </p>
-        </div>
+        <RevealOnScroll>
+          <div className="text-center mb-16">
+            <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
+              Technical Stack
+            </h2>
+            <div className="w-20 h-1 bg-blue-600 mx-auto mb-6"></div>
+            <p className="text-gray-400 text-lg max-w-2xl mx-auto">
+              Technologies and tools I use to build scalable, production-ready applications
+            </p>
+          </div>
+        </RevealOnScroll>
 
         {/* Skill Cards */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {skillCategories.map((category, index) => {
-            const Icon = category.icon;
-            const styles = colorStyles[category.color];
+        <RevealOnScroll delay={0.2} width="100%">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {skillCategories.map((category, index) => {
+              const Icon = category.icon;
+              const styles = colorStyles[category.color];
 
-            return (
-              <div
-                key={index}
-                className="bg-gray-900/60 backdrop-blur-sm rounded-2xl p-6 border border-gray-700 hover:border-gray-600 transition-all duration-300"
-              >
-                {/* Icon */}
+              return (
                 <div
-                  className={`w-12 h-12 flex items-center justify-center rounded-xl mb-4 ${styles.icon}`}
+                  key={index}
+                  className="bg-gray-900/60 backdrop-blur-sm rounded-2xl p-6 border border-gray-700 hover:border-gray-600 transition-all duration-300"
                 >
-                  <Icon className="text-white" size={24} />
-                </div>
+                  {/* Icon */}
+                  <div
+                    className={`w-12 h-12 flex items-center justify-center rounded-xl mb-4 ${styles.icon}`}
+                  >
+                    <Icon className="text-white" size={24} />
+                  </div>
 
-                {/* Title */}
-                <h3 className="text-xl font-bold text-white mb-4">
-                  {category.title}
-                </h3>
+                  {/* Title */}
+                  <h3 className="text-xl font-bold text-white mb-4">
+                    {category.title}
+                  </h3>
 
-                {/* Skills */}
-                <div className="flex flex-wrap gap-2">
-                  {category.skills.map((skill, skillIndex) => (
-                    <span
-                      key={skillIndex}
-                      className={`px-3 py-1.5 rounded-lg text-sm font-medium border transition-all duration-200 hover:scale-105 ${styles.badge}`}
-                    >
-                      {skill}
-                    </span>
-                  ))}
+                  {/* Skills */}
+                  <div className="flex flex-wrap gap-2">
+                    {category.skills.map((skill, skillIndex) => (
+                      <span
+                        key={skillIndex}
+                        className={`px-3 py-1.5 rounded-lg text-sm font-medium border transition-all duration-200 hover:scale-105 ${styles.badge}`}
+                      >
+                        {skill}
+                      </span>
+                    ))}
+                  </div>
                 </div>
-              </div>
-            );
-          })}
-        </div>
+              );
+            })}
+          </div>
+        </RevealOnScroll>
 
         {/* Core Concepts */}
-        <div className="mt-14 bg-gray-900/60 backdrop-blur-sm rounded-2xl p-8 border border-gray-700">
-          <h3 className="text-2xl font-bold text-white mb-6 text-center">
-            Core Concepts
-          </h3>
-          <div className="flex flex-wrap justify-center gap-4">
-            {[ 'Data Structures & Algorithms(DSA)', 'OOPS(Object-Oriented Programming Systems)', 'Database Management System(DBMS)', 'Operating System', 'Scheduling Algorithms', 'System Debugging', 'Cyber Security & Auditing', 'Performance Optimization', 'Logical Reasoning', 'Data Interpretation', 'Real-Time Systems', 'Cloud Computing', 'Cloud Architecture', ].map((concept, index) => (
-              <span
-                key={index}
-                className="px-6 py-2 bg-gradient-to-r from-blue-600/20 to-green-600/20 border border-blue-500/30 rounded-full text-white font-medium"
-              >
-                {concept}
-              </span>
-            ))}
+        <RevealOnScroll delay={0.4} width="100%">
+          <div className="mt-14 bg-gray-900/60 backdrop-blur-sm rounded-2xl p-8 border border-gray-700">
+            <h3 className="text-2xl font-bold text-white mb-6 text-center">
+              Core Concepts
+            </h3>
+            <div className="flex flex-wrap justify-center gap-4">
+              {['Data Structures & Algorithms(DSA)', 'OOPS(Object-Oriented Programming Systems)', 'Database Management System(DBMS)', 'Operating System', 'Scheduling Algorithms', 'System Debugging', 'Cyber Security & Auditing', 'Performance Optimization', 'Logical Reasoning', 'Data Interpretation', 'Real-Time Systems', 'Cloud Computing', 'Cloud Architecture',].map((concept, index) => (
+                <span
+                  key={index}
+                  className="px-6 py-2 bg-gradient-to-r from-blue-600/20 to-green-600/20 border border-blue-500/30 rounded-full text-white font-medium"
+                >
+                  {concept}
+                </span>
+              ))}
+            </div>
           </div>
-        </div>
+        </RevealOnScroll>
       </div>
     </section>
   );
