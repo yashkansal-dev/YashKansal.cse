@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { Menu, X, Github, Linkedin, Code2, FileType } from 'lucide-react';
+import { Home, User, Wrench, FolderOpen, Briefcase, Award, Mail, Github, Linkedin, Code2, FileType } from 'lucide-react';
 import { motion } from 'framer-motion';
 
 const sections = [
@@ -12,18 +12,36 @@ const sections = [
   'contact',
 ];
 
-const Navbar = () => {
-  const [isOpen, setIsOpen] = useState(false);
-  const [scrolled, setScrolled] = useState(false);
-  const [activeSection, setActiveSection] = useState('home');
+const navItems = [
+  { href: '#home', label: 'Home', icon: Home },
+  { href: '#about', label: 'About', icon: User },
+  { href: '#skills', label: 'Skills', icon: Wrench },
+  { href: '#projects', label: 'Projects', icon: FolderOpen },
+  { href: '#experience', label: 'Experience', icon: Briefcase },
+  { href: '#achievements', label: 'Achievements', icon: Award },
+  { href: '#contact', label: 'Contact', icon: Mail },
+];
 
-  useEffect(() => {
-    const handleScroll = () => {
-      setScrolled(window.scrollY > 50);
-    };
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
+const resumeLink =
+  'https://drive.google.com/file/d/1pBkZstZ-biEEUcMxF5JgUv9e2fRKADYw/view?usp=drive_link';
+
+/* Custom X (Twitter) logo — renders the 𝕏 mark instead of the old bird */
+const XIcon = ({ size = 22 }: { size?: number }) => (
+  <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+    <path d="M4 4l6.5 8L4 20h2l5.5-6.8L16 20h4l-6.8-8.5L19.5 4H18l-5 6.2L9 4H4z" />
+  </svg>
+);
+
+const socialIcons = [
+  { href: resumeLink, icon: FileType, label: 'Resume', custom: false },
+  { href: 'https://github.com/yashkansal-dev', icon: Github, label: 'GitHub', custom: false },
+  { href: 'https://www.linkedin.com/in/yashkansal-dev/', icon: Linkedin, label: 'LinkedIn', custom: false },
+  { href: 'https://leetcode.com/u/YashKansal-dev/', icon: Code2, label: 'LeetCode', custom: false },
+  { href: 'https://x.com/yashkansal_dev', icon: XIcon, label: 'X', custom: true },
+];
+
+const Navbar = () => {
+  const [activeSection, setActiveSection] = useState('home');
 
   // Active section observer
   useEffect(() => {
@@ -35,7 +53,7 @@ const Navbar = () => {
           }
         });
       },
-      { threshold: 0.6 }
+      { threshold: 0.35 }
     );
 
     sections.forEach(id => {
@@ -46,181 +64,81 @@ const Navbar = () => {
     return () => observer.disconnect();
   }, []);
 
-  const navLinks = [
-    { href: '#home', label: 'Home' },
-    { href: '#about', label: 'About' },
-    { href: '#skills', label: 'Skills' },
-    { href: '#projects', label: 'Projects' },
-    { href: '#experience', label: 'Experience' },
-    { href: '#achievements', label: 'Achievements' },
-    { href: '#contact', label: 'Contact' },
-  ];
-
-  const resumeLink =
-    'https://drive.google.com/file/d/1pBkZstZ-biEEUcMxF5JgUv9e2fRKADYw/view?usp=drive_link';
-
-  const linkBase =
-    'px-4 py-2 rounded-lg text-sm font-medium transition-all duration-200';
-
   return (
-    <nav
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled
-        ? 'bg-gray-900/95 backdrop-blur-sm shadow-lg'
-        : 'bg-transparent'
-        }`}
-    >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-16">
-          {/* Logo */}
-          <a href="#home" className="text-xl font-bold text-white">
-            YK
-          </a>
-
-          {/* Desktop Nav Links */}
-          <div className="hidden md:flex items-center space-x-2">
-            {navLinks.map(link => {
-              const isActive = activeSection === link.href.replace('#', '');
-              return (
-                <motion.a
-                  key={link.href}
-                  href={link.href}
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.96 }}
-                  className={`${linkBase} ${isActive
-                    ? 'bg-blue-600/20 text-blue-400'
-                    : 'text-gray-300 hover:bg-blue-600/15 hover:text-blue-400'
-                    }`}
-                >
-                  {link.label}
-                </motion.a>
-              );
-            })}
-          </div>
-
-          {/* Desktop Icons */}
-          <div className="hidden md:flex items-center space-x-2">
-            {[
-              { href: resumeLink, icon: <FileType size={20} />, label: 'Resume' },
-              { href: 'https://github.com/yashkansal-dev', icon: <Github size={20} />, label: 'GitHub' },
-              {
-                href: 'https://www.linkedin.com/in/yashkansal-dev/',
-                icon: <Linkedin size={20} />,
-                label: 'LinkedIn',
-              },
-              {
-                href: 'https://x.com/yashkansal_dev',
-                icon: <X size={20} />,
-                label: 'X',
-              },
-              {
-                href: 'https://leetcode.com/u/YashKansal-dev/',
-                icon: <Code2 size={20} />,
-                label: 'LeetCode',
-              },
-            ].map(item => (
+    <>
+      {/* ─── Top header bar: Social icons (right) ─── */}
+      <div className="fixed top-0 left-0 right-0 z-50 pointer-events-none">
+        <div className="max-w-7xl mx-auto px-6 lg:px-8 py-5 flex items-center justify-end">
+          {/* Social icons — top-right */}
+          <div className="pointer-events-auto flex items-center gap-3">
+            {socialIcons.map(item => (
               <motion.a
                 key={item.label}
                 href={item.href}
                 target="_blank"
                 rel="noopener noreferrer"
-                whileHover={{ scale: 1.1 }}
+                whileHover={{ scale: 1.15 }}
                 whileTap={{ scale: 0.9 }}
                 className="
-                  p-2 rounded-lg text-gray-300
+                  p-2.5 rounded-xl text-gray-400
                   transition-all duration-200
-                  hover:bg-blue-600/15 hover:text-blue-400
+                  hover:bg-white/10 hover:text-white
+                  hover:shadow-[0_0_16px_rgba(255,255,255,0.08)]
                 "
                 title={item.label}
               >
-                {item.icon}
+                {item.custom
+                  ? <item.icon size={22} />
+                  : <item.icon size={22} strokeWidth={1.8} />
+                }
               </motion.a>
             ))}
-          </div>
-
-          {/* Mobile Menu Button */}
-          <div className="md:hidden">
-            <motion.button
-              whileTap={{ scale: 0.9 }}
-              onClick={() => setIsOpen(!isOpen)}
-              className="
-                p-2 rounded-lg text-gray-300
-                hover:bg-blue-600/15 hover:text-blue-400
-                transition-all
-              "
-            >
-              {isOpen ? <X size={24} /> : <Menu size={24} />}
-            </motion.button>
           </div>
         </div>
       </div>
 
-      {/* Mobile Menu */}
-      {isOpen && (
-        <motion.div
-          initial={{ opacity: 0, y: -10 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.25 }}
-          className="md:hidden bg-gray-900/95 backdrop-blur-sm"
-        >
-          <div className="px-3 pt-3 pb-4 space-y-1">
-            {navLinks.map(link => (
+      {/* ─── Bottom fixed navigation pill ─── */}
+      <nav
+        className="
+          fixed bottom-6 z-50
+          left-1/2 -translate-x-1/2
+          bg-gray-900/80 backdrop-blur-xl
+          border border-white/10
+          rounded-full
+          shadow-2xl shadow-black/40
+          px-2 py-2
+        "
+      >
+        <div className="flex items-center gap-1">
+          {navItems.map(item => {
+            const isActive = activeSection === item.href.replace('#', '');
+            const Icon = item.icon;
+            return (
               <motion.a
-                key={link.href}
-                href={link.href}
-                whileTap={{ scale: 0.96 }}
-                onClick={() => setIsOpen(false)}
-                className="
-                  block px-4 py-2 rounded-lg
-                  text-gray-300 hover:bg-blue-600/15 hover:text-blue-400
-                  transition-all
-                "
+                key={item.href}
+                href={item.href}
+                whileHover={{ scale: 1.1 }}
+                whileTap={{ scale: 0.92 }}
+                className={`
+                  relative flex items-center gap-1.5
+                  px-3 py-2 rounded-full
+                  text-xs font-semibold
+                  transition-all duration-200
+                  ${isActive
+                    ? 'bg-blue-600/90 text-white shadow-lg shadow-blue-600/25'
+                    : 'text-gray-400 hover:text-white hover:bg-white/10'
+                  }
+                `}
+                title={item.label}
               >
-                {link.label}
+                <Icon size={15} strokeWidth={2.2} />
+                <span className="hidden sm:inline">{item.label}</span>
               </motion.a>
-            ))}
-
-            {/* Mobile Icons */}
-            <div className="flex items-center gap-3 px-4 pt-3">
-              {[FileType, Github, Linkedin, Code2].map((Icon, i) => (
-                <div className="flex items-center gap-3 px-4 pt-3">
-                  {[
-                    { href: resumeLink, Icon: FileType, label: 'Resume' },
-                    { href: 'https://github.com/yashkansal-dev', Icon: Github, label: 'GitHub' },
-                    {
-                      href: 'https://www.linkedin.com/in/yashkansal-dev/',
-                      Icon: Linkedin,
-                      label: 'LinkedIn',
-                    },
-                    {
-                      href: 'https://x.com/yashkansal_dev',
-                      Icon: X,
-                      label: 'X',
-                    },
-                    {
-                      href: 'https://leetcode.com/u/YashKansal-dev/',
-                      Icon: Code2,
-                      label: 'LeetCode',
-                    },
-                  ].map(item => (
-                    <motion.a
-                      key={item.label}
-                      href={item.href}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      whileTap={{ scale: 0.85 }}
-                      className="p-2 rounded-lg text-gray-300 hover:bg-blue-600/15 hover:text-blue-400"
-                      title={item.label}
-                    >
-                      <item.Icon size={20} />
-                    </motion.a>
-                  ))}
-                </div>
-              ))}
-            </div>
-          </div>
-        </motion.div>
-      )}
-    </nav>
+            );
+          })}
+        </div>
+      </nav>
+    </>
   );
 };
 

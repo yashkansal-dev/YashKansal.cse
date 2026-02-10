@@ -1,4 +1,4 @@
-import { ArrowDown, Mail } from 'lucide-react';
+import { ArrowDown, Mail, Phone } from 'lucide-react';
 import Image from 'next/image';
 import { motion } from 'framer-motion';
 
@@ -60,7 +60,7 @@ const Hero = () => {
                 mb-6
               "
             >
-              Yash Kansal – Software Engineer
+              Yash Kansal
             </motion.h1>
 
             <motion.p
@@ -131,44 +131,70 @@ const Hero = () => {
             transition={{ duration: 0.5, delay: 0.5 }}
             className="relative flex justify-center lg:justify-end"
           >
-            {/* Glow */}
-            <div
-              className="
-                absolute
-                -inset-8
-                rounded-full
-                bg-blue-500/20
-                blur-3xl
-              "
-            />
+            <div className="flex flex-col items-center gap-6">
+              <div className="relative">
+                {/* Glow */}
+                <div
+                  className="
+                    absolute
+                    -inset-8
+                    rounded-full
+                    bg-blue-500/20
+                    blur-3xl
+                  "
+                />
 
-            {/* Image wrapper */}
-            <div
-              className="
-                relative
-                w-64
-                h-64
-                sm:w-72
-                sm:h-72
-                lg:w-80
-                lg:h-80
-                rounded-2xl
-                overflow-hidden
-                border border-white/10
-                shadow-xl
-                transition-transform
-                duration-500
-                hover:scale-105
-              "
-            >
-              <Image
-                src="/images/ykansal.png"
-                alt="Yash Kansal"
-                fill
-                sizes="(max-width: 768px) 256px, 320px"
-                className="object-cover"
-                priority
-              />
+                {/* Image wrapper */}
+                <div
+                  className="
+                    relative
+                    w-64
+                    h-64
+                    sm:w-72
+                    sm:h-72
+                    lg:w-80
+                    lg:h-80
+                    rounded-2xl
+                    overflow-hidden
+                    border border-white/10
+                    shadow-xl
+                    transition-transform
+                    duration-500
+                    hover:scale-105
+                  "
+                >
+                  <Image
+                    src="/images/ykansal.png"
+                    alt="Yash Kansal"
+                    fill
+                    sizes="(max-width: 768px) 256px, 320px"
+                    className="object-cover"
+                    priority
+                  />
+                </div>
+              </div>
+
+              {/* Book a Call Button */}
+              <a
+                href="https://cal.com/yashkansal"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="
+                  px-8 py-3
+                  rounded-lg
+                  border-2 border-gray-600
+                  hover:border-blue-500
+                  text-white
+                  font-medium
+                  flex items-center gap-2
+                  transition-all
+                  duration-300
+                  bg-gray-900/50 backdrop-blur-sm
+                "
+              >
+                <Phone size={18} />
+                Book a Call
+              </a>
             </div>
           </motion.div>
         </div>

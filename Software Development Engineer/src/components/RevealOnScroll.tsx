@@ -8,7 +8,7 @@ interface RevealOnScrollProps {
     delay?: number; // Optional delay prop
 }
 
-export const RevealOnScroll = ({ children, width = 'fit-content', className, delay = 0.25 }: RevealOnScrollProps) => {
+export const RevealOnScroll = ({ children, width = '100%', className, delay = 0.25 }: RevealOnScrollProps) => {
     const ref = useRef(null);
     const isInView = useInView(ref, { once: true, margin: "-75px" });
     const mainControls = useAnimation();
@@ -26,7 +26,7 @@ export const RevealOnScroll = ({ children, width = 'fit-content', className, del
     };
 
     return (
-        <div ref={ref} style={{ position: "relative", width, overflow: "hidden" }} className={className}>
+        <div ref={ref} style={{ position: "relative", width }} className={className}>
             <motion.div
                 variants={variants}
                 initial="hidden"
