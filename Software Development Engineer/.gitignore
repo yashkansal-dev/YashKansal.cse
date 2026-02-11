@@ -1,3 +1,7 @@
+# Dependencies
+node_modules
+
+# Logs
 logs
 *.log
 npm-debug.log*
@@ -6,21 +10,24 @@ yarn-error.log*
 pnpm-debug.log*
 lerna-debug.log*
 
-node_modules
-dist
-dist-ssr
-*.local
+# Next.js build output
+.next/
+out/
 
-.vscode/*
-!.vscode/extensions.json
-.idea
+# Misc
+*.local
 .DS_Store
 *.suo
 *.ntvs*
 *.njsproj
 *.sln
 *.sw?
-.env
 
-# Next.js build output
-.next/
+# IDE
+.vscode/*
+!.vscode/extensions.json
+.idea
+
+# Environment
+.env
+.env*.local
