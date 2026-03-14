@@ -47,6 +47,7 @@ export const metadata: Metadata = {
         description: 'High-performance web applications and premium UI/UX design.',
         creator: '@yashkansal_dev',
     },
+    
 };
 
 export default function RootLayout({
@@ -56,6 +57,9 @@ export default function RootLayout({
 }>) {
     return (
         <html lang="en">
+            <head>
+                <meta name="google-adsense-account" content="ca-pub-3986882594296568" />
+            </head>
             <body className={`${inter.variable} ${spaceGrotesk.variable} font-sans`}>
                 <JsonLd />
                 {children}
