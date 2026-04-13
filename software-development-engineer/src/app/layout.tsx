@@ -17,6 +17,11 @@ const spaceGrotesk = Space_Grotesk({
 export const metadata: Metadata = {
     title: 'Yash Kansal | Software Engineer',
     description: 'Yash Kansal is a Software Engineer specializing in full stack development, real-time systems, cloud architecture, and scalable web applications.',
+    icons: {
+        icon: '/images/ykansal.png',
+        shortcut: '/images/ykansal.png',
+        apple: '/images/ykansal.png',
+    },
     applicationName: 'Yash Kansal Portfolio',
     keywords: ['Software Engineer', 'React Developer', 'Next.js Developer', 'UI/UX Designer', 'Web Development', 'JavaScript', 'TypeScript', 'Portfolio', 'Backend & Frontend Engineering', 'Scalable Systems'],
     authors: [{ name: 'Yash Kansal' }],
