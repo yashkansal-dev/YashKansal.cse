@@ -16,7 +16,7 @@ const Projects = () => {
       ],
       tech: ['React.js', 'Node.js', 'Socket.IO', 'WebRTC'],
       year: '2025',
-      github: 'https://github.com/yashkansal-dev/CodeSync',
+      github: 'https://codesync-com.vercel.app/',
       image: '/images/welcome.png',
     },
     {
@@ -30,7 +30,7 @@ const Projects = () => {
       ],
       tech: ['Python', 'Genetic Algorithms', 'Pandas', 'MERN Stack'],
       year: '2024',
-      github: 'https://github.com/yashkansal-dev/SmartSched',
+      github: 'https://smartsched.netlify.app/',
       image: '/images/Analytics-Reports.png',
     },
     {
@@ -44,7 +44,7 @@ const Projects = () => {
       ],
       tech: ['React.js', 'Node.js', 'News APIs', 'Geolocation'],
       year: '2024',
-      github: 'https://github.com/yashkansal-dev/AidLink',
+      github: 'https://aid-link.netlify.app/',
       image: '/images/AidLink.png',
     },
     {
