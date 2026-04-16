@@ -17,6 +17,7 @@ const Projects = () => {
       tech: ['React.js', 'Node.js', 'Socket.IO', 'WebRTC'],
       year: '2025',
       github: 'https://codesync-com.vercel.app/',
+      live: 'https://codesync.yashkansal.dev/',
       image: '/images/welcome.png',
     },
     {
@@ -30,7 +31,8 @@ const Projects = () => {
       ],
       tech: ['Python', 'Genetic Algorithms', 'Pandas', 'MERN Stack'],
       year: '2024',
-      github: 'https://smartsched.netlify.app/',
+      github: 'https://github.com/yashkansal-dev/SmartSched',
+      live: 'https://smartsched.netlify.app/',
       image: '/images/Analytics-Reports.png',
     },
     {
@@ -44,7 +46,8 @@ const Projects = () => {
       ],
       tech: ['React.js', 'Node.js', 'News APIs', 'Geolocation'],
       year: '2024',
-      github: 'https://aid-link.netlify.app/',
+      github: 'https://github.com/yashkansal-dev/AidLink',
+      live: 'https://aid-link.netlify.app/',
       image: '/images/AidLink.png',
     },
     {
@@ -59,6 +62,7 @@ const Projects = () => {
       tech: ['MERN Stack', 'REST APIs', 'Tailwind CSS'],
       year: '2023',
       github: 'https://github.com/yashkansal-dev/SparkBook',
+      live: 'https://github.com/yashkansal-dev/SparkBook',
       image: '/images/Sparkbook.png',
     },
   ];
@@ -159,7 +163,7 @@ const Projects = () => {
                       </a>
 
                       <a
-                        href={project.github}
+                        href={project.live}
                         target="_blank"
                         rel="noopener noreferrer"
                         className="
@@ -172,7 +176,7 @@ const Projects = () => {
                         "
                       >
                         <ExternalLink size={20} />
-                        Learn More
+                        Live Demo
                       </a>
                     </div>
                   </div>
