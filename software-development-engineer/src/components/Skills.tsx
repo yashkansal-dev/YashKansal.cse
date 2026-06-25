@@ -23,45 +23,43 @@ const Skills = () => {
   const skillCategories: SkillCategory[] = [
     {
       title: 'Languages',
-      skills: ['C++', 'Python', 'Java', 'C', 'JavaScript', 'TypeScript', 'HTML', 'CSS', 'PHP', 'SQL'],
+      skills: ['C', 'C++', 'Python', 'Java', 'JavaScript', 'TypeScript', 'SQL'],
       color: 'blue',
       icon: Code2,
     },
     {
-      title: 'Frameworks & Libraries',
+      title: 'Frontend',
       skills: [
         'React.js',
         'Next.js',
-        'Node.js',
-        'Express',
-        'MERN Stack',
+        'HTML',
+        'CSS',
         'Tailwind CSS',
-        'Material UI',
       ],
       color: 'green',
       icon: Layers,
     },
     {
-      title: 'Databases & Tools',
-      skills: ['MongoDB', 'SQLite', 'Prisma', 'Firebase', 'Google Cloud', 'Git', 'Linux'],
+      title: 'Backend & APIs',
+      skills: ['Node.js', 'Express.js', 'REST APIs', 'JWT/Auth', 'Socket.IO', 'WebRTC', 'Prisma', 'API Integration'],
       color: 'purple',
-      icon: Database,
-    },
-    {
-      title: 'Real-Time & APIs',
-      skills: ['Socket.IO', 'WebRTC', 'REST APIs', 'Postman'],
-      color: 'orange',
       icon: Wifi,
     },
     {
+      title: 'Databases',
+      skills: ['MongoDB', 'SQLite', 'Firebase', 'PostgreSQL'],
+      color: 'orange',
+      icon: Database,
+    },
+    {
       title: 'Development Tools',
-      skills: ['VS Code', 'IntelliJ IDEA', 'Eclipse', 'Docker', 'Jupyter Notebook', 'Google Colab'],
+      skills: ['Git', 'Docker', 'Postman', 'VS Code'],
       color: 'red',
       icon: Wrench,
     },
     {
       title: 'Deployment & Cloud',
-      skills: ['Vercel', 'Netlify', 'Render', 'AWS', 'Salesforce'],
+      skills: ['Vercel', 'Netlify', 'Render', 'Google Cloud', 'AWS Amplify', 'AWS Lambda'],
       color: 'teal',
       icon: Cloud,
     },
@@ -164,7 +162,7 @@ const Skills = () => {
               Core Concepts
             </h3>
             <div className="flex flex-wrap justify-center gap-4">
-              {['Data Structures & Algorithms(DSA)', 'OOPS(Object-Oriented Programming Systems)', 'Database Management System(DBMS)', 'Operating System', 'Scheduling Algorithms', 'System Debugging', 'Cyber Security & Auditing', 'Performance Optimization', 'Logical Reasoning', 'Data Interpretation', 'Real-Time Systems', 'Cloud Computing', 'Cloud Architecture',].map((concept, index) => (
+              {['Data Structures & Algorithms (DSA)', 'Object-Oriented Programming (OOPS)', 'Database Management Systems (DBMS)', 'Operating Systems', 'Cyber Security & Auditing', 'Cloud Computing', 'Computer Networks', 'System Optimization', 'Real-Time Systems', 'Full-Stack Architecture'].map((concept, index) => (
                 <span
                   key={index}
                   className="px-6 py-2 bg-gradient-to-r from-blue-600/20 to-green-600/20 border border-blue-500/30 rounded-full text-white font-medium"

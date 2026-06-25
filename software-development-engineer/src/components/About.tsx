@@ -24,7 +24,7 @@ const About = () => {
             <p className="text-gray-300 text-lg leading-relaxed mb-6">
               From a real-time collaborative IDE (<span className="text-blue-400 font-medium">CodeSync</span>) to an
               AI-based timetable scheduler (<span className="text-blue-400 font-medium">SmartSched</span>) and a
-              crisis-response platform (<span className="text-blue-400 font-medium">AidLink</span>), I've worked
+              real-time crisis management platform (<span className="text-blue-400 font-medium">LifeLink</span>), I've worked
               across diverse problem spaces—combining full stack engineering, algorithms, and cloud
               deployment to deliver solutions used by hundreds of users.
             </p>
@@ -49,14 +49,15 @@ const About = () => {
                 <div>
                   <h4 className="text-blue-400 font-semibold mb-2">Development</h4>
                   <p className="text-gray-300">
-                    JavaScript (ES6+), TypeScript, React, Next.js, Node.js, Express, MongoDB, SQL,
-                    Python, C++
+                    C, C++, Python, Java, JavaScript, TypeScript, SQL, React, Next.js, Node.js,
+                    Express.js
                   </p>
                 </div>
                 <div>
                   <h4 className="text-blue-400 font-semibold mb-2">Real-Time & APIs</h4>
                   <p className="text-gray-300">
-                    REST APIs, WebRTC, Socket.IO, Real-Time Systems, Distributed Collaboration
+                    REST APIs, JWT/Auth, WebRTC, Socket.IO, WebSockets, Real-Time Systems,
+                    Distributed Collaboration
                   </p>
                 </div>
                 <div>
@@ -69,7 +70,8 @@ const About = () => {
                 <div>
                   <h4 className="text-blue-400 font-semibold mb-2">Cloud & DevOps</h4>
                   <p className="text-gray-300">
-                    Git/GitHub, Linux, Docker, Firebase, Google Cloud, Vercel, System Design
+                    Git/GitHub, Docker, Firebase, PostgreSQL, Google Cloud, AWS Amplify, AWS Lambda,
+                    Vercel, System Design
                   </p>
                 </div>
               </div>

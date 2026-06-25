@@ -45,7 +45,7 @@ const Leadership = () => {
               </div>
               <div>
                 <h3 className="text-2xl font-bold text-white">Co-Dev Club</h3>
-                <p className="text-green-400 font-medium">Core Team Member (2023 – Present)</p>
+                <p className="text-green-400 font-medium">Core Team Member (2023 – 2026)</p>
               </div>
             </div>
 

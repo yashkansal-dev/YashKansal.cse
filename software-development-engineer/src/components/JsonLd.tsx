@@ -27,35 +27,29 @@ const sameAs = [
 
 const projects = [
   {
+    name: "LifeLink",
+    description:
+      "Real-time crisis management application connecting citizens and volunteers with emergency coordination, WebSockets, and Google Maps SDK.",
+    url: "https://web-lifelink.vercel.app/",
+    languages: ["Kotlin", "JavaScript", "SQL"],
+    keywords: ["Kotlin", "Android SDK", "Node.js", "PostgreSQL", "WebSockets"],
+  },
+  {
     name: "CodeSync",
     description:
       "Real-time collaborative coding system using WebRTC and scalable synchronization patterns.",
     url: "https://codesync.yashkansal.dev/",
+    languages: ["JavaScript", "TypeScript"],
     keywords: ["WebRTC", "real-time collaboration", "system design"],
   },
   {
     name: "SmartSched",
     description:
       "Genetic algorithm timetable scheduling system for conflict-free academic schedules.",
-    url: "https://smartsched.netlify.app/",
+    url: "https://smartschedular.vercel.app/",
     repository: "https://github.com/yashkansal-dev/SmartSched",
+    languages: ["Python", "JavaScript"],
     keywords: ["genetic algorithms", "optimization", "MERN"],
-  },
-  {
-    name: "AidLink",
-    description:
-      "MERN application focused on reliable delivery workflows and user-centered coordination.",
-    url: "https://aid-link.netlify.app/",
-    repository: "https://github.com/yashkansal-dev/AidLink",
-    keywords: ["MERN", "MongoDB", "Express", "React", "Node.js"],
-  },
-  {
-    name: "SparkBook",
-    description:
-      "Full-stack social and content platform demonstrating product engineering and scalable web architecture.",
-    url: "https://github.com/yashkansal-dev/SparkBook",
-    repository: "https://github.com/yashkansal-dev/SparkBook",
-    keywords: ["full-stack", "React", "Node.js", "product engineering"],
   },
 ];
 
@@ -167,7 +161,7 @@ export default function JsonLd({
           description: project.description,
           url: project.url,
           ...(project.repository ? { codeRepository: project.repository } : {}),
-          programmingLanguage: ["TypeScript", "JavaScript"],
+          programmingLanguage: project.languages,
           keywords: project.keywords.join(", "),
           author: {
             "@id": personId,
